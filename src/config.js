@@ -2,6 +2,7 @@ const {config} = require('dotenv')
 config()
 
 module.exports = {
+  PORT: process.env.PORT || 8000,
   db: {
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
