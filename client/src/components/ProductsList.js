@@ -7,9 +7,10 @@ export default function ProductsList(props) {
   const [ingreso] = useState(props.ingreso)
 
   const loadProducts = async () => {
-    const response = await fetch("http://localhost:9000/products");
+    const response = await fetch("http://localhost:9000/api/products");
     const data = await response.json();
-    setProducts(data);
+    console.log(data.products)
+    setProducts(data.products);
   };
 
   useEffect(() => {

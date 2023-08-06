@@ -10,9 +10,10 @@ export default function Sesion(props) {
   /* Se utiliza el async/await con el fin de que las
   acciones a la base de datos se hagan de manera asincrona*/
   const loadUsers = async () => {
-    const response = await fetch("http://localhost:9000/users");
+    const response = await fetch("http://localhost:9000/api/users");
     const data = await response.json();
-    setUsers(data);
+    console.log(data.users)
+    setUsers(data.users);
   }
 
   /* Se usa el hook useEffect para cargar los datos de los
